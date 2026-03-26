@@ -1,14 +1,13 @@
 //IMPORTS
 import { useGlobal } from "../contexts/GlobalContext"
+import AppCard from "./AppCard"
 
 export default function AppMain() {
     //USE STATE (IMPORTATI DA CUSTOM HOOK)
     const { moviesList, seriesList } = useGlobal()
 
 
-    //DATA  
-    const imgPath = 'https://image.tmdb.org/t/p/'
-
+    
     return (
         <main>
             {/* DynamicRender */}
@@ -24,29 +23,7 @@ export default function AppMain() {
 
                         <ul>
                             {moviesList.map(movie => ( //MAP PER CICLARE NELL'ARRAY RICAVATO DALLA FUNZIONE
-                                <li key={movie.id}>
-
-                                    {movie.title} <br />
-                                    Titolo originale: {movie.original_title}  <br />
-                                    Lingua:
-                                    <span
-                                        //Gestisco con un condizionale il render delle icone.
-                                        className={movie.original_language == 'en' ? 'fi fi-gb' : `fi fi-${movie.original_language.toLowerCase()}`}
-
-                                    >
-                                    </span> <br />
-                                    Voto: {movie.vote_average.toFixed(1)} <br />
-
-
-                                    <div className="img-box">
-                                        <img src={`${imgPath}w342${movie.poster_path}`} alt="" />
-                                    </div>
-
-
-
-                                </li>
-
-
+                                <li key={movie.id}> <AppCard typeOfMedia={movie} /> </li>
 
                             ))}
                         </ul>
@@ -54,23 +31,7 @@ export default function AppMain() {
                         {/* TV SERIES LIST */}
                         <ul>
                             {seriesList.map(serie => (
-                                <li key={serie.id}>
-                                    Titolo Originale: {serie.original_name} <br />
-                                    Lingua:
-                                    <span
-
-                                        className={serie.original_language == 'en' ? 'fi fi-gb' : `fi fi-${serie.original_language.toLowerCase()}`}
-
-                                    >
-                                    </span> <br />
-
-                                    Voto: {serie.vote_average.toFixed(1)}
-
-                                      <div className="img-box">
-                                        <img src={`${imgPath}w342${serie.poster_path}`} alt="" />
-                                    </div>
-
-                                </li>
+                                <li key={serie.id}><AppCard typeOfMedia={serie} /></li>
 
                             ))}
                         </ul>

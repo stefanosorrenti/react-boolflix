@@ -1,0 +1,26 @@
+export default function AppCard({typeOfMedia}) {
+    
+    //DATA
+    const imgPath = 'https://image.tmdb.org/t/p/'
+    return (
+
+        <>
+            {typeOfMedia.title} <br />
+            Titolo originale: {typeOfMedia.original_title || typeOfMedia.original_name}  <br />
+            Lingua:
+            <span
+                //Gestisco con un condizionale il render delle icone.
+                className={typeOfMedia.original_language == 'en' ? 'fi fi-gb' : `fi fi-${typeOfMedia.original_language.toLowerCase()}`}
+
+            >
+            </span> <br />
+            Voto: {typeOfMedia.vote_average.toFixed(1)} <br />
+
+
+            <div className="img-box">
+                <img src={`${imgPath}w342${typeOfMedia.poster_path}`} alt="" />
+            </div>
+
+        </>
+    )
+}
