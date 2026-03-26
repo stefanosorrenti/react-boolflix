@@ -23,6 +23,7 @@ export default function AppHeader() {
             //console.log(apiMoviesEndpoint);
             //console.log(renderMovies.length);
             setRender(res.data)
+            setInputValue('')
             console.log(render);
             
             
