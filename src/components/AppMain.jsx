@@ -10,21 +10,22 @@ export default function AppMain() {
         <main>
             {/* DynamicRender */}
 
-            {render.length === 0 ?
+            {render.length === 0 ? //Se l'array che renderizza è vuoto
 
-                (
+                ( //RENDERIZZO QUESTO
                     <span>PROVA A CERCARE QUALCOSA</span>
-                ) : (
+                ) : ( //ALTRIMENTI QUESTO
 
+                    /* MOVIES LIST */
                     <ul>
-                        {render.results.map(movie => (
+                        {render.results.map(movie => ( //MAP PER CICLARE NELL'ARRAY RICAVATO DALLA FUNZIONE
                             <li>
 
                                 {movie.title} <br />
                                 Titolo originale: {movie.original_title} <br />
-                                Lingua:{movie.original_language}
+                                Lingua:
                                 <span
-
+                                    //Gestisco con un condizionale il render delle icone.
                                     class={movie.original_language == 'en' ? 'fi fi-gb' : `fi fi-${movie.original_language.toLowerCase()}`}
 
                                 >
