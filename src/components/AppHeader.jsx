@@ -23,6 +23,7 @@ export default function AppHeader() {
             //console.log(apiMoviesEndpoint);
             //console.log(renderMovies.length);
             setRender(res.data)
+            console.log(render);
             
             
                     
@@ -48,7 +49,14 @@ export default function AppHeader() {
 
                         <ul>
                             {render.results.map(movie => (
-                                <li>{movie.title}</li>
+                                <li>
+                                    
+                                    {movie.title} <br />
+                                    Titolo originale: {movie.original_title} <br />
+                                    Lingua: {movie.original_language.toUpperCase()} <br />
+                                    Voto: {movie.vote_average.toFixed(1)}
+
+                                </li>
                             ))}
                         </ul>
 
