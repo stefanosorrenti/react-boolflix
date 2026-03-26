@@ -9,27 +9,32 @@ export default function AppHeader() {
     
     //DATA
     const API_KEY = import.meta.env.VITE_API_KEY
-    const apiMoviesEndpoint = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${inputValue}&`
+    const apiMoviesEndpoint = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${inputValue.toLowerCase().replaceAll(" ", "-")}&`
     
-    useEffect (() => {
-        console.log(apiMoviesEndpoint);
-        
-    },[inputValue])
-    axios.get(apiMoviesEndpoint)
-    .then(res => {
-        console.log(res.data);
-        
-    })
     
+    
+    
+    //FUNCTIONS
+    function getMoviesList () {
+        axios.get(apiMoviesEndpoint)
+        .then(res => {
+            console.log(res.data.results);
+            console.log(apiMoviesEndpoint);
+            
+            
+        
+            
+        })
+        
+    }
     return(
         /* Header */
         <header>
             
             <nav>
                 <input type="text" value={inputValue} onChange={(e)=> setInputValue(e.target.value)} />
-                <button>Cerca film</button>
+                <button onClick={getMoviesList}>Cerca film</button>
             </nav>
-
             
         </header>
     )
