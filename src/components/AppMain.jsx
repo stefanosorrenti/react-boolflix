@@ -6,6 +6,9 @@ export default function AppMain() {
     const { moviesList, seriesList } = useGlobal()
 
 
+    //DATA  
+    const imgPath = 'https://image.tmdb.org/t/p/'
+
     return (
         <main>
             {/* DynamicRender */}
@@ -35,6 +38,12 @@ export default function AppMain() {
                                     Voto: {movie.vote_average.toFixed(1)} <br />
 
 
+                                    <div className="img-box">
+                                        <img src={`${imgPath}w342${movie.poster_path}`} alt="" />
+                                    </div>
+
+
+
                                 </li>
 
 
@@ -56,6 +65,11 @@ export default function AppMain() {
                                     </span> <br />
 
                                     Voto: {serie.vote_average.toFixed(1)}
+
+                                      <div className="img-box">
+                                        <img src={`${imgPath}w342${serie.poster_path}`} alt="" />
+                                    </div>
+
                                 </li>
 
                             ))}
