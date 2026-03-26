@@ -6,6 +6,7 @@ export default function AppHeader() {
     //USE STATE
     const [inputValue, setInputValue] = useState('')
     
+    const [render, setRender] = useState([])
     
     //DATA
     const API_KEY = import.meta.env.VITE_API_KEY
@@ -18,12 +19,13 @@ export default function AppHeader() {
     function getMoviesList () {
         axios.get(apiMoviesEndpoint)
         .then(res => {
-            console.log(res.data.results);
-            console.log(apiMoviesEndpoint);
+            //console.log(res.data.results);
+            //console.log(apiMoviesEndpoint);
+            //console.log(renderMovies.length);
+            setRender(res.data)
             
             
-        
-            
+                    
         })
         
     }
@@ -36,6 +38,25 @@ export default function AppHeader() {
                 <button onClick={getMoviesList}>Cerca film</button>
             </nav>
             
+            <section>
+
+                {render.length === 0 ? 
+
+                    (
+                        <span>PROVA A CERCARE QUALCOSA</span>
+                    ):(
+
+                        <ul>
+                            {render.results.map(movie => (
+                                <li>{movie.title}</li>
+                            ))}
+                        </ul>
+
+                    )
+
+                }
+
+            </section>
         </header>
     )
 }
