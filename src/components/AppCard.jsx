@@ -1,7 +1,14 @@
 export default function AppCard({typeOfMedia}) {
-    
+
     //DATA
     const imgPath = 'https://image.tmdb.org/t/p/'
+
+    
+    //FUNCTIONS 
+    function getNumberProp (value) {
+        return (value - 1) * (5 - 1) / (10 - 1) + 1
+
+    }
     return (
 
         <>
@@ -14,13 +21,15 @@ export default function AppCard({typeOfMedia}) {
 
             >
             </span> <br />
-            Voto: {typeOfMedia.vote_average.toFixed(1)} <br />
+            Voto: {Math.ceil(getNumberProp(typeOfMedia.vote_average))} <br />
 
 
             <div className="img-box">
                 <img src={`${imgPath}w342${typeOfMedia.poster_path}`} alt="" />
             </div>
-
+           
         </>
     )
 }
+
+
