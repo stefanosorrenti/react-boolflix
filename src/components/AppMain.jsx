@@ -30,7 +30,7 @@ export default function AppMain() {
 
                         {/* TV SERIES LIST */}
                         <ul>
-                            {seriesList.map(serie => (
+                            {seriesList.map(serie => ( //MAP PER CICLARE NELL'ARRAY RICAVATO DALLA FUNZIONE
                                 <li key={serie.id}><AppCard typeOfMedia={serie} /></li>
 
                             ))}

@@ -9,11 +9,6 @@ export default function AppHeader() {
     const { inputValue,  setInputValue, setMoviesList, setSeriesList  } = useGlobal();
 
     
-
-    
-    
-    
-    
     //DATA
     const API_KEY = import.meta.env.VITE_API_KEY
     const apiMoviesEndPoint = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${inputValue.toLowerCase().replaceAll(" ", "-")}&`
@@ -23,7 +18,7 @@ export default function AppHeader() {
    
     
     //FUNCTIONS
-    function getMoviesList () {
+    function getMoviesList () { //EFFETUO LE CHIAMATAE AJAX
         axios.get(apiMoviesEndPoint)
         .then(res => {
             //console.log(res.data.results);
@@ -65,7 +60,7 @@ export default function AppHeader() {
             
             {/* NavBar */}
             <nav>
-                <input type="text" value={inputValue} onChange={(e)=> setInputValue(e.target.value)} />
+                <input type="text" value={inputValue} onChange={(e)=> setInputValue(e.target.value)} /> {/* Rendo dinamico il mio input value */}
                 <button onClick={getMoviesList}>Cerca film</button>
             </nav>
             
