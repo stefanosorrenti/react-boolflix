@@ -3,39 +3,65 @@ import { useGlobal } from "../contexts/GlobalContext"
 
 export default function AppMain() {
     //USE STATE (IMPORTATI DA CUSTOM HOOK)
-    const { render } = useGlobal()
+    const { moviesList, seriesList } = useGlobal()
 
 
     return (
         <main>
             {/* DynamicRender */}
 
-            {render.length === 0 ? //Se l'array che renderizza è vuoto
+            {moviesList.length === 0 ? //Se l'array che renderizza è vuoto
 
                 ( //RENDERIZZO QUESTO
                     <span>PROVA A CERCARE QUALCOSA</span>
                 ) : ( //ALTRIMENTI QUESTO
 
                     /* MOVIES LIST */
-                    <ul>
-                        {render.results.map(movie => ( //MAP PER CICLARE NELL'ARRAY RICAVATO DALLA FUNZIONE
-                            <li>
+                    <>
 
-                                {movie.title} <br />
-                                Titolo originale: {movie.original_title} <br />
-                                Lingua:
-                                <span
-                                    //Gestisco con un condizionale il render delle icone.
-                                    class={movie.original_language == 'en' ? 'fi fi-gb' : `fi fi-${movie.original_language.toLowerCase()}`}
+                        <ul>
+                            {moviesList.map(movie => ( //MAP PER CICLARE NELL'ARRAY RICAVATO DALLA FUNZIONE
+                                <li key={movie.id}>
 
-                                >
-                                </span> <br />
-                                Voto: {movie.vote_average.toFixed(1)}
+                                    {movie.title} <br />
+                                    Titolo originale: {movie.original_title}  <br />
+                                    Lingua:
+                                    <span
+                                        //Gestisco con un condizionale il render delle icone.
+                                        className={movie.original_language == 'en' ? 'fi fi-gb' : `fi fi-${movie.original_language.toLowerCase()}`}
+
+                                    >
+                                    </span> <br />
+                                    Voto: {movie.vote_average.toFixed(1)} <br />
 
 
-                            </li>
-                        ))}
-                    </ul>
+                                </li>
+
+
+
+                            ))}
+                        </ul>
+
+                        {/* TV SERIES LIST */}
+                        <ul>
+                            {seriesList.map(serie => (
+                                <li key={serie.id}>
+                                    Titolo Originale: {serie.original_name} <br />
+                                    Lingua:
+                                    <span
+
+                                        className={serie.original_language == 'en' ? 'fi fi-gb' : `fi fi-${serie.original_language.toLowerCase()}`}
+
+                                    >
+                                    </span> <br />
+
+                                    Voto: {serie.vote_average.toFixed(1)}
+                                </li>
+
+                            ))}
+                        </ul>
+
+                    </>
 
                 )
 

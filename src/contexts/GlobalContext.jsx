@@ -10,8 +10,8 @@ function GlobalProvider ({children}) {
 
     //USE STATES
     const [inputValue, setInputValue] = useState('')
-    const [render, setRender] = useState([])
-
+    const [moviesList, setMoviesList] = useState([])
+    const [seriesList, setSeriesList ] = useState([])
     //DATA
     /* const language = [
         {
@@ -25,8 +25,10 @@ function GlobalProvider ({children}) {
         value={{
             inputValue,
             setInputValue,
-            render,
-            setRender
+            moviesList,
+            setMoviesList,
+            seriesList,
+            setSeriesList
         }} 
         
         >

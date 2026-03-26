@@ -3,34 +3,62 @@ import axios from "axios"
 import { useGlobal } from "../contexts/GlobalContext"
 import { useState } from "react"
 
+
 export default function AppHeader() {
     //USE STATE (IMPORTATI CON CUSTOM HOOK)
-    const { inputValue,  setInputValue, render, setRender } = useGlobal();
+    const { inputValue,  setInputValue, setMoviesList, setSeriesList  } = useGlobal();
+
+    
+
+    
+    
     
     
     //DATA
     const API_KEY = import.meta.env.VITE_API_KEY
-    const apiMoviesEndpoint = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${inputValue.toLowerCase().replaceAll(" ", "-")}&`
+    const apiMoviesEndPoint = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${inputValue.toLowerCase().replaceAll(" ", "-")}&`
+    const apiSeriesEndPoint = `https://api.themoviedb.org/3/search/tv?api_key=${API_KEY}&query=${inputValue.toLowerCase().replaceAll(" ", "-")}&`
     
     
-    
+   
     
     //FUNCTIONS
     function getMoviesList () {
-        axios.get(apiMoviesEndpoint)
+        axios.get(apiMoviesEndPoint)
         .then(res => {
             //console.log(res.data.results);
-            //console.log(apiMoviesEndpoint);
+            //console.log(apiMoviesEndPoint);
             //console.log(renderMovies.length);
-            setRender(res.data)
+            
+            setMoviesList(res.data.results)
             setInputValue('')
-            console.log(render);
+            //console.log(render);
+            
+            
+            
+            
             
             
                     
         })
+
+        axios.get(apiSeriesEndPoint)
+        .then(res => {
+
+            //console.log(res.data.results);
+            //console.log(res.data.results)
+            setSeriesList(res.data.results)
+            
+            
+            
+            
+        })
+
         
     }
+
+    //console.log(render.length);
+    
     return(
         /* Header */
         <header>
