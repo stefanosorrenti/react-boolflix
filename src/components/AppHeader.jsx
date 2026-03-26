@@ -1,12 +1,12 @@
 //IMPORTS
 import axios from "axios"
-import { useEffect, useState } from "react"
+import { useGlobal } from "../contexts/GlobalContext"
+import { useState } from "react"
 
 export default function AppHeader() {
-    //USE STATE
-    const [inputValue, setInputValue] = useState('')
+    //USE STATE (IMPORTATI CON CUSTOM HOOK)
+    const { inputValue,  setInputValue, render, setRender } = useGlobal();
     
-    const [render, setRender] = useState([])
     
     //DATA
     const API_KEY = import.meta.env.VITE_API_KEY
@@ -34,37 +34,13 @@ export default function AppHeader() {
         /* Header */
         <header>
             
+            {/* NavBar */}
             <nav>
                 <input type="text" value={inputValue} onChange={(e)=> setInputValue(e.target.value)} />
                 <button onClick={getMoviesList}>Cerca film</button>
             </nav>
             
-            <section>
-
-                {render.length === 0 ? 
-
-                    (
-                        <span>PROVA A CERCARE QUALCOSA</span>
-                    ):(
-
-                        <ul>
-                            {render.results.map(movie => (
-                                <li>
-                                    
-                                    {movie.title} <br />
-                                    Titolo originale: {movie.original_title} <br />
-                                    Lingua: {movie.original_language.toUpperCase()} <br />
-                                    Voto: {movie.vote_average.toFixed(1)}
-
-                                </li>
-                            ))}
-                        </ul>
-
-                    )
-
-                }
-
-            </section>
+           
         </header>
     )
 }
