@@ -12,6 +12,14 @@ function GlobalProvider ({children}) {
     const [inputValue, setInputValue] = useState('')
     const [render, setRender] = useState([])
 
+    //DATA
+    /* const language = [
+        {
+            char: 'IT'
+            icon: 
+        }
+    ] */
+
     return (
         <GlobalContext.Provider 
         value={{

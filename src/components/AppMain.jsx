@@ -22,8 +22,15 @@ export default function AppMain() {
 
                                 {movie.title} <br />
                                 Titolo originale: {movie.original_title} <br />
-                                Lingua: {movie.original_language.toUpperCase()} <br />
+                                Lingua:{movie.original_language}
+                                <span
+
+                                    class={movie.original_language == 'en' ? 'fi fi-gb' : `fi fi-${movie.original_language.toLowerCase()}`}
+
+                                >
+                                </span> <br />
                                 Voto: {movie.vote_average.toFixed(1)}
+
 
                             </li>
                         ))}
@@ -32,7 +39,7 @@ export default function AppMain() {
                 )
 
             }
-            
+
         </main>
     )
 
