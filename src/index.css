@@ -8,12 +8,16 @@ img {
     width: 100%;
 }
 
+body {
+    background-color: black;
+}
 /* UTILITY */
 
 /*--------HEADER--------*/
 
 header {
     background-color: #1e1f21;
+    
     
 }
 
@@ -23,6 +27,7 @@ header nav {
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    
 }
 
 .navbar-brand > img {
@@ -46,7 +51,18 @@ nav form {
 
 
 
+/*--------MAIN--------*/
 
+/* App Banner*/
+.welcome-banner{
+    color: white;
+    height: calc(100vh - 187px);
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    text-align: center;
+}
 
 
 /*--------MEDIA QUERY--------*/

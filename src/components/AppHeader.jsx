@@ -62,7 +62,7 @@ export default function AppHeader() {
             
             {/* NavBar */}
             <nav>
-                <a class="navbar-brand" href="#">
+                <a className="navbar-brand" href="#">
                 <img src= "../src/assets/img/mobile-logo.png" alt="" />
                 <img src= "../src/assets/img/desktop-logo.png" alt=""  />
                 </a>
@@ -70,7 +70,7 @@ export default function AppHeader() {
                 {/* FORM FOR SEARCH */}
                 <form onSubmit={getMoviesList}>
                 <input type="text" value={inputValue} onChange={(e)=> setInputValue(e.target.value)} className="form-control-sm" /> {/* Rendo dinamico il mio input value */}
-                <button disabled = {inputValue.length == 0 && true} className="btn btn-danger">Cerca film</button>
+                <button disabled = {inputValue.length == 0 && true} className="btn btn-danger">Cerca</button>
 
                 </form>
             </nav>
