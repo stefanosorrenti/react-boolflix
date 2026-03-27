@@ -1,6 +1,6 @@
 //IMPORTS
 import { createContext, useContext, useState } from "react";
-
+import { Riple } from "react-loading-indicators";
 const GlobalContext = createContext();
 
 //FUNZIONE PER IL PROVIDER
@@ -12,6 +12,8 @@ function GlobalProvider ({children}) {
     const [inputValue, setInputValue] = useState('')
     const [moviesList, setMoviesList] = useState([])
     const [seriesList, setSeriesList ] = useState([])
+    const [search, setSearch] = useState(false)
+    const [loading, setLoading] =useState(<Riple color="#ea0000" size="medium" text="" textColor="" />)
     //DATA
     /* const language = [
         {
@@ -28,7 +30,11 @@ function GlobalProvider ({children}) {
             moviesList,
             setMoviesList,
             seriesList,
-            setSeriesList
+            setSeriesList,
+            search, 
+            setSearch,
+            loading,
+            setLoading
         }} 
         
         >

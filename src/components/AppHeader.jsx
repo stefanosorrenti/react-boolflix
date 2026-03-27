@@ -1,12 +1,12 @@
 //IMPORTS
 import axios from "axios"
 import { useGlobal } from "../contexts/GlobalContext"
-
+import { Riple } from "react-loading-indicators";
 
 
 export default function AppHeader() {
     //USE STATE (IMPORTATI CON CUSTOM HOOK)
-    const { inputValue,  setInputValue, setMoviesList, setSeriesList  } = useGlobal();
+    const { inputValue,  setInputValue, setMoviesList, setSeriesList, setSearch, setLoading  } = useGlobal();
 
     
     //DATA
@@ -49,7 +49,8 @@ export default function AppHeader() {
             
         })
 
-        
+        setSearch(true)
+        setLoading(<Riple color="#ea0000" size="medium" text="" textColor="" />)
     }
 
     //console.log(render.length);

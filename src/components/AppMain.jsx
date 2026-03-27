@@ -1,18 +1,20 @@
 //IMPORTS
 import { useGlobal } from "../contexts/GlobalContext"
 import AppCard from "./AppCard"
+import AppLoading from "./AppLoading"
+
 
 export default function AppMain() {
     //USE STATE (IMPORTATI DA CUSTOM HOOK)
-    const { moviesList, seriesList } = useGlobal()
+    const { moviesList, seriesList, search } = useGlobal()
 
-
+    
     
     return (
         <main>
             {/* DynamicRender */}
 
-            {moviesList.length === 0 ? //Se l'array che renderizza è vuoto
+            {search === false ? //Se l'array che renderizza è vuoto
 
                 ( //RENDERIZZO QUESTO
                     <span>PROVA A CERCARE QUALCOSA</span>
@@ -41,6 +43,11 @@ export default function AppMain() {
                 )
 
             }
+
+            {search === true && moviesList.length === 0 && seriesList.length === 0 &&
+            (   
+              <AppLoading />
+            )}
 
         </main>
     )
