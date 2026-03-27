@@ -11,10 +11,12 @@ img {
 ul {
     list-style: none;
     padding: 0px;
+    
 }
 
 li {
     display: inline-block;
+    color: white;
 }
 
 body {
@@ -107,6 +109,7 @@ li span {
     justify-content: end;
     gap: 10px;
     text-align: center;
+    
     
     
 }

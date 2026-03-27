@@ -3,12 +3,13 @@ import { useGlobal } from "../contexts/GlobalContext"
 import AppCard from "./AppCard"
 import AppLoading from "./AppLoading"
 import AppBanner from "./AppBanner"
+import { useState } from "react"
 
 export default function AppMain() {
     //USE STATE (IMPORTATI DA CUSTOM HOOK)
-    const { moviesList, seriesList, search } = useGlobal()
-
-
+    const { moviesList, seriesList, search, setHoverRender, setSelected } = useGlobal()
+    
+    
     return (
         <main>
             {/* DynamicRender */}

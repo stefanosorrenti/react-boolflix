@@ -1,8 +1,8 @@
 //IMPORTS
 import AppCardRating from "./AppCardRating"
-import { useState } from "react"
+import { useGlobal } from "../contexts/GlobalContext"
 export default function AppCard({ typeOfMedia }) { //Aggiunfo props per rendere riutilizzabile la card sia con i filme che con le serie
-
+    const { hoverRender, selected, setSelected, setHoverRender } = useGlobal()
 
 
     //DATA
@@ -12,6 +12,10 @@ export default function AppCard({ typeOfMedia }) { //Aggiunfo props per rendere 
     const langunges = ['it', 'gb', 'en', 'fr', 'de', 'ro', 'es', 'ja']
     let langClass = ''
 
+    function getHoverEffect (id) {
+        setSelected(id)
+        setHoverRender(true)
+    }
 
     
     langunges.map(lang => {
@@ -26,9 +30,9 @@ export default function AppCard({ typeOfMedia }) { //Aggiunfo props per rendere 
 
     return (
 
-        <>
+        <div className="card border border-0" onMouseEnter={() => getHoverEffect(typeOfMedia.id)} onMouseLeave={() => getHoverEffect(null)}>
 
-            <ul className='movie-info'>
+            <ul className={hoverRender && selected === typeOfMedia.id ?   'movie-info' : 'd-none ' }>
 
                 {/* Titolo  */}
                 <li>
@@ -36,7 +40,7 @@ export default function AppCard({ typeOfMedia }) { //Aggiunfo props per rendere 
                 </li>
 
                 { /* Titol originale */}
-                <li className="h6">
+                <li>
                     <span className="fw-bold text-danger">Titolo originale:</span> {typeOfMedia.original_title || typeOfMedia.original_name}
                 </li>
 
@@ -69,13 +73,14 @@ export default function AppCard({ typeOfMedia }) { //Aggiunfo props per rendere 
                 className="movies-cover"
                 alt="cover image"
                 
+                
 
             />
 
 
 
 
-        </>
+        </div>
 
 
 
