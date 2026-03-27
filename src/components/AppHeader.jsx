@@ -1,7 +1,7 @@
 //IMPORTS
 import axios from "axios"
 import { useGlobal } from "../contexts/GlobalContext"
-import { useState } from "react"
+
 
 
 export default function AppHeader() {
@@ -61,10 +61,11 @@ export default function AppHeader() {
             {/* NavBar */}
             <nav>
                 <input type="text" value={inputValue} onChange={(e)=> setInputValue(e.target.value)} /> {/* Rendo dinamico il mio input value */}
-                <button onClick={getMoviesList}>Cerca film</button>
+                <button disabled = {inputValue.length == 0 && true} onClick={getMoviesList}>Cerca film</button>
             </nav>
             
            
         </header>
     )
-}
+}       
+
