@@ -116,6 +116,19 @@ li span {
     
 }
 
+
+/* Not Found Banner */
+
+.not-found-alert{
+    font-size: xxx-large;
+    color: white;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+
+}
 /*--------MEDIA QUERY--------*/
 
 

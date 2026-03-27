@@ -19,14 +19,17 @@ export default function AppCard({ typeOfMedia }) { //Aggiunfo props per rendere 
     }
 
     
-    langunges.map(lang => {
-        if (lang === typeOfMedia.original_language.toLowerCase()) {
-            
-            langClass = lang
+    
+        langunges.map(lang => {
+            if (lang === typeOfMedia.original_language.toLowerCase()) {
+                
+                langClass = lang
+    
+            } 
+        })
 
-        } 
-    })
-
+    
+    
     
 
     return (
@@ -70,7 +73,7 @@ export default function AppCard({ typeOfMedia }) { //Aggiunfo props per rendere 
             {/* Movies */}
             {imgLink.includes(null)  ? 
             (
-              <img src="https://previews.123rf.com/images/oculo/oculo2004/oculo200400003/143645399-no-image-available-icon.jpg"  alt="no-img " />
+              <img src="https://previews.123rf.com/images/oculo/oculo2004/oculo200400003/143645399-no-image-available-icon.jpg" className="movies-cover"  alt="no-img " />
             ):(
 
                 <img
@@ -97,7 +100,7 @@ export default function AppCard({ typeOfMedia }) { //Aggiunfo props per rendere 
 
 
 
-        /* Movie Cover */
+        
 
 
     )

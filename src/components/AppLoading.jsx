@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react"
-import { Riple } from "react-loading-indicators"
+import { useEffect } from "react"
+
 import { useGlobal } from "../contexts/GlobalContext"
 
 export default function AppLoading() {
@@ -9,7 +9,7 @@ export default function AppLoading() {
     useEffect(() => {
 
          const errorBanner = setTimeout(() => {
-            setLoading(<span>Non ho trovato nulla.</span>)  
+            setLoading(<span className="not-found-alert">Non ho trovato nulla.</span>)  
         }, 2000)
 
         return () => clearTimeout(errorBanner)

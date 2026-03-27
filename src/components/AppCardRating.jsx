@@ -54,11 +54,11 @@ export default function AppCardRating ({value}) { //Passo il valore in proporzio
              {value === 5 && 
             (
                 <ul className = "d-flex justify-content-center fs-3" > 
-                    <li><i class="bi bi-star-fill"></i></li>
-                    <li><i class="bi bi-star-fill"></i></li>
-                    <li><i class="bi bi-star-fill"></i></li>
-                    <li><i class="bi bi-star-fill"></i></li>
-                    <li><i class="bi bi-star-fill"></i></li>
+                    <li><i class="text-warning bi bi-star-fill"></i></li>
+                    <li><i class="text-warning bi bi-star-fill"></i></li>
+                    <li><i class="text-warning bi bi-star-fill"></i></li>
+                    <li><i class="text-warning bi bi-star-fill"></i></li>
+                    <li><i class="text-warning bi bi-star-fill"></i></li>
 
                 </ul>
             )}

@@ -1,6 +1,8 @@
 //IMPORTS
 import { createContext, useContext, useState } from "react";
 import { Riple } from "react-loading-indicators";
+import AppCircleLoading from "../components/AppCircleLoading";
+
 const GlobalContext = createContext();
 
 //FUNZIONE PER IL PROVIDER
@@ -13,7 +15,7 @@ function GlobalProvider ({children}) {
     const [moviesList, setMoviesList] = useState([])
     const [seriesList, setSeriesList ] = useState([])
     const [search, setSearch] = useState(false)
-    const [loading, setLoading] =useState(<Riple color="#ea0000" size="medium" text="" textColor="" />)
+    const [loading, setLoading] =useState(<Riple color="#ea0000" size="large" text="" textColor="" />)
     const [hoverRender, setHoverRender] = useState(false)
     const [selected, setSelected] = useState(false)
     //DATA

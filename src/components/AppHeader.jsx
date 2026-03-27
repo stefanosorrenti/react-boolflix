@@ -69,8 +69,8 @@ export default function AppHeader() {
                 
                 {/* FORM FOR SEARCH */}
                 <form onSubmit={getMoviesList}>
-                <input type="text" value={inputValue} onChange={(e)=> setInputValue(e.target.value)} className="form-control-sm" /> {/* Rendo dinamico il mio input value */}
-                <button disabled = {inputValue.length == 0 && true} className="btn btn-danger">Cerca</button>
+                <input type="text" value={inputValue} onChange={(e)=> setInputValue(e.target.value)} className="form-control" placeholder='Pulp Fiction, Riverdale...' /> {/* Rendo dinamico il mio input value */}
+                <button disabled = {inputValue.length == 0 && true} className="btn btn-danger" >Cerca</button>
 
                 </form>
             </nav>
