@@ -13,17 +13,22 @@ ul {
     padding: 0px;
 }
 
+li {
+    display: inline-block;
+}
+
 body {
     background-color: black;
 }
+
 /* UTILITY */
 
 /*--------HEADER--------*/
 
 header {
     background-color: #1e1f21;
-    
-    
+
+
 }
 
 /* NavBar */
@@ -32,14 +37,14 @@ header nav {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    
+
 }
 
-.navbar-brand > img {
+.navbar-brand>img {
     height: 70px;
 }
 
-.navbar-brand > img:last-child {
+.navbar-brand>img:last-child {
     display: none;
 }
 
@@ -59,12 +64,12 @@ nav form {
 /*--------MAIN--------*/
 
 /* App Banner*/
-.welcome-banner{
+.welcome-banner {
     color: white;
     height: calc(100vh - 187px);
     display: flex;
     flex-direction: column;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     text-align: center;
 }
@@ -74,37 +79,52 @@ nav form {
 
 .movie-card {
     max-height: 459px;
+    position: relative;
 }
 
-.movies-cover{
-    max-height: 100%;
-    object-fit: contain;
+.movies-cover {
+    height: 100%;
+    object-fit: cover;
     object-position: center;
-    z-index: -1;
+    
 }
+
+
 
 .movie-info {
-    text-align: left;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 101%;
+    width: 100%;
+    translate: -50% -50%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    gap: 10px;
+    
 }
+
 /*--------MEDIA QUERY--------*/
 
 
 /* HEADER */
 
-@media screen and (min-width: 768px)  {
-    
+@media screen and (min-width: 768px) {
+
 
     header nav {
         flex-direction: row;
         justify-content: space-between;
     }
-    
+
     /* Navabar */
-    .navbar-brand > img:first-child{
+    .navbar-brand>img:first-child {
         display: none;
     }
-    
-    .navbar-brand > img:last-child {
+
+    .navbar-brand>img:last-child {
         display: inline-block;
         height: 100px;
     }

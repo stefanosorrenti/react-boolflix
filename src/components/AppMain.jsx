@@ -27,7 +27,7 @@ export default function AppMain() {
                         <section className="text-white mt-5">
 
                             {/* MOVIES LIST */}
-                            <div className="row text-white gap-3">
+                            <div className="row text-white gy-4">
                                 {moviesList.map(movie => ( //MAP PER CICLARE NELL'ARRAY RICAVATO DALLA FUNZIONE
                                     <div className="col-12 col-md-4 col-lg-3 movie-card" key={movie.id}> <AppCard typeOfMedia={movie} /> </div>
 
@@ -35,9 +35,9 @@ export default function AppMain() {
                             </div>
 
                             {/* TV SERIES LIST */}
-                            <div className="row">
+                            <div className="row g-4">
                                 {seriesList.map(serie => ( //MAP PER CICLARE NELL'ARRAY RICAVATO DALLA FUNZIONE
-                                    <div className="col-12 col-md-4 col-lg-3" key={serie.id}><AppCard typeOfMedia={serie} /></div>
+                                    <div className="col-12 col-md-4 col-lg-3 movie-card" key={serie.id}><AppCard typeOfMedia={serie} /></div>
 
                                 ))}
                             </div>
