@@ -32,7 +32,7 @@ export default function AppCard({ typeOfMedia }) { //Aggiunfo props per rendere 
 
         <div className="card border border-0" onMouseEnter={() => getHoverEffect(typeOfMedia.id)} onMouseLeave={() => getHoverEffect(null)}>
 
-            <ul className={hoverRender && selected === typeOfMedia.id ?   'd-none ': 'movie-info'  }>
+            <ul className={hoverRender && selected === typeOfMedia.id ? 'movie-info' : 'd-none '}>
 
                 {/* Titolo  */}
                 <li>

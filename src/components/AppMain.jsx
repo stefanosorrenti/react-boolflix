@@ -35,7 +35,7 @@ export default function AppMain() {
                             </div>
 
                             {/* TV SERIES LIST */}
-                            <div className="row g-4">
+                            <div className="row g-4 mt-1">
                                 {seriesList.map(serie => ( //MAP PER CICLARE NELL'ARRAY RICAVATO DALLA FUNZIONE
                                     <div className="col-12 col-md-4 col-lg-3 movie-card" key={serie.id}><AppCard typeOfMedia={serie} /> </div>
 
