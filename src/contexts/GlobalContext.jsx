@@ -14,7 +14,7 @@ function GlobalProvider ({children}) {
     const [seriesList, setSeriesList ] = useState([])
     const [search, setSearch] = useState(false)
     const [loading, setLoading] =useState(<Riple color="#ea0000" size="medium" text="" textColor="" />)
-    const [renderMoviesInfo, setRenderMoviesInfo] = useState(true)
+    
     //DATA
     /* const language = [
         {
@@ -35,9 +35,8 @@ function GlobalProvider ({children}) {
             search, 
             setSearch,
             loading,
-            setLoading,
-            renderMoviesInfo,
-            setRenderMoviesInfo
+            setLoading
+            
         }} 
         
         >
