@@ -28,7 +28,7 @@ export default function AppMain() {
                             {/* MOVIES LIST */}
                             <div className="row text-white gy-4">
                                 {moviesList.map(movie => ( //MAP PER CICLARE NELL'ARRAY RICAVATO DALLA FUNZIONE
-                                    <div className="col-12 col-md-4 col-lg-3 movie-card" key={movie.id} onMouseEnter={() => setRenderMoviesInfo(true)} onMouseLeave={() => setRenderMoviesInfo(false)} > <AppCard typeOfMedia={movie} /> </div>
+                                    <div className="col-12 col-md-4 col-lg-3 movie-card" key={movie.id} > <AppCard typeOfMedia={movie} /> </div>
 
                                 ))}
                             </div>

@@ -90,6 +90,9 @@ nav form {
 }
 
 
+li span {
+    display: block
+}
 
 .movie-info {
     position: absolute;
@@ -103,6 +106,8 @@ nav form {
     flex-direction: column;
     justify-content: end;
     gap: 10px;
+    text-align: center;
+    
     
 }
 

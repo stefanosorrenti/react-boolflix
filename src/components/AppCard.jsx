@@ -6,8 +6,7 @@ export default function AppCard({ typeOfMedia }) { //Aggiunfo props per rendere 
 
 
     //DATA
-    const [selected, setSelected] = useState(false)
-    const [renderMoviesInfo, setRenderMoviesInfo] = useState(false)
+    
     const imgPath = 'https://image.tmdb.org/t/p/'  //Variabile che contiene la path principale per cercare le immagini nell'api
     const ratingValue = Math.ceil((typeOfMedia.vote_average - 1) * (5 - 1) / (10 - 1) + 1) //Salvo in una variabile la proporzione della valutazione dei film, trasformandolo da 1/10 a 1/5
     const langunges = ['it', 'gb', 'en', 'fr', 'de', 'ro', 'es', 'ja']
@@ -17,7 +16,7 @@ export default function AppCard({ typeOfMedia }) { //Aggiunfo props per rendere 
     
     langunges.map(lang => {
         if (lang === typeOfMedia.original_language.toLowerCase()) {
-            console.log('UGUALE');
+            
             langClass = lang
 
         } 
@@ -25,24 +24,11 @@ export default function AppCard({ typeOfMedia }) { //Aggiunfo props per rendere 
 
     
 
-    //FUNCTIONS
-    function getHoverEffect() {
-        setSelected(true)
-        setRenderMoviesInfo(true)
-    }
-
-    function disableHoverEffect() {
-
-        setSelected(false)
-        setRenderMoviesInfo(false)
-
-    }
-
     return (
 
         <>
 
-            <ul className={renderMoviesInfo && selected ? 'movie-info' : 'movie-info d-none'}>
+            <ul className='movie-info'>
 
                 {/* Titolo  */}
                 <li>
@@ -76,13 +62,13 @@ export default function AppCard({ typeOfMedia }) { //Aggiunfo props per rendere 
                 </li>
 
             </ul>
-
+            {/* Movies */}
             <img
                 src={`${imgPath}w342${typeOfMedia.poster_path}`}
+
                 className="movies-cover"
                 alt="cover image"
-                onMouseEnter={getHoverEffect}
-                onMouseLeave={disableHoverEffect}
+                
 
             />
 
