@@ -8,6 +8,11 @@ img {
     width: 100%;
 }
 
+ul {
+    list-style: none;
+    padding: 0px;
+}
+
 body {
     background-color: black;
 }
@@ -65,6 +70,22 @@ nav form {
 }
 
 
+/* Movie Cards */
+
+.movie-card {
+    max-height: 459px;
+}
+
+.movies-cover{
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center;
+    z-index: -1;
+}
+
+.movie-info {
+    text-align: left;
+}
 /*--------MEDIA QUERY--------*/
 
 

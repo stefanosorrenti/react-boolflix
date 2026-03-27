@@ -16,30 +16,33 @@ export default function AppMain() {
             <div className="container">
 
                 {search === false ? //Se l'array che renderizza è vuoto
+                    //RENDERIZZO QUESTO
+                    (<AppBanner />)
 
-                    ( //RENDERIZZO QUESTO
-                        <AppBanner />
-                    ) : ( //ALTRIMENTI QUESTO
+                    :
 
-                        /* MOVIES LIST */
-                        <>
+                    ( //ALTRIMENTI QUESTO
 
-                            <ul>
+                        /* RENDER LIST */
+                        <section className="text-white mt-5">
+
+                            {/* MOVIES LIST */}
+                            <div className="row text-white gap-3">
                                 {moviesList.map(movie => ( //MAP PER CICLARE NELL'ARRAY RICAVATO DALLA FUNZIONE
-                                    <li key={movie.id}> <AppCard typeOfMedia={movie} /> </li>
+                                    <div className="col-12 col-md-4 col-lg-3 movie-card" key={movie.id}> <AppCard typeOfMedia={movie} /> </div>
 
                                 ))}
-                            </ul>
+                            </div>
 
                             {/* TV SERIES LIST */}
-                            <ul>
+                            <div className="row">
                                 {seriesList.map(serie => ( //MAP PER CICLARE NELL'ARRAY RICAVATO DALLA FUNZIONE
-                                    <li key={serie.id}><AppCard typeOfMedia={serie} /></li>
+                                    <div className="col-12 col-md-4 col-lg-3" key={serie.id}><AppCard typeOfMedia={serie} /></div>
 
                                 ))}
-                            </ul>
+                            </div>
 
-                        </>
+                        </section>
 
                     )
 

@@ -7,53 +7,53 @@ export default function AppCardRating ({value}) { //Passo il valore in proporzio
             {/* Uso il render condizionale con AND per gestire quante stelline piene renderizzare in base al numero */}
              {value === 1 && 
             (
-                <ul>
-                    <li><i class="bi bi-star-fill"></i></li>
-                    <li><i class="bi bi-star"></i></li>
-                    <li><i class="bi bi-star"></i></li>
-                    <li><i class="bi bi-star"></i></li>
-                    <li><i class="bi bi-star"></i></li>
+                <ul className = "d-flex justify-content-center fs-3" > 
+                    <li><i class="text-warning bi bi-star-fill"></i></li>
+                    <li><i class="text-warning bi bi-star"></i></li>
+                    <li><i class="text-warning bi bi-star"></i></li>
+                    <li><i class="text-warning bi bi-star"></i></li>
+                    <li><i class="text-warning bi bi-star"></i></li>
                 </ul>
             )}
 
             {value === 2 && 
             (
-                <ul>
-                    <li><i class="bi bi-star-fill"></i></li>
-                    <li><i class="bi bi-star-fill"></i></li>
-                    <li><i class="bi bi-star"></i></li>
-                    <li><i class="bi bi-star"></i></li>
-                    <li><i class="bi bi-star"></i></li>
+                <ul className = "d-flex justify-content-center fs-3" >
+                    <li><i class="text-warning bi bi-star-fill"></i></li>
+                    <li><i class="text-warning bi bi-star-fill"></i></li>
+                    <li><i class="text-warning bi bi-star"></i></li>
+                    <li><i class="text-warning bi bi-star"></i></li>
+                    <li><i class="text-warning bi bi-star"></i></li>
                 </ul>
             )}
 
             {value === 3 && 
             (
-                <ul>
-                    <li><i class="bi bi-star-fill"></i></li>
-                    <li><i class="bi bi-star-fill"></i></li>
-                    <li><i class="bi bi-star-fill"></i></li>
-                    <li><i class="bi bi-star"></i></li>
-                    <li><i class="bi bi-star"></i></li>
+                <ul className = "d-flex justify-content-center fs-3" >
+                    <li><i class="text-warning bi bi-star-fill"></i></li>
+                    <li><i class="text-warning bi bi-star-fill"></i></li>
+                    <li><i class="text-warning bi bi-star-fill"></i></li>
+                    <li><i class="text-warning bi bi-star"></i></li>
+                    <li><i class="text-warning bi bi-star"></i></li>
 
                 </ul>
             )}
 
              {value === 4 && 
             (
-                <ul>
-                    <li><i class="bi bi-star-fill"></i></li>
-                    <li><i class="bi bi-star-fill"></i></li>
-                    <li><i class="bi bi-star-fill"></i></li>
-                    <li><i class="bi bi-star-fill"></i></li>
-                    <li><i class="bi bi-star"></i></li>
+                <ul className = "d-flex justify-content-center fs-3">  
+                    <li><i class="text-warning bi bi-star-fill"></i></li>
+                    <li><i class="text-warning bi bi-star-fill"></i></li>
+                    <li><i class="text-warning bi bi-star-fill"></i></li>
+                    <li><i class="text-warning bi bi-star-fill"></i></li>
+                    <li><i class="text-warning bi bi-star"></i></li>
 
                 </ul>
             )}
 
              {value === 5 && 
             (
-                <ul>
+                <ul className = "d-flex justify-content-center fs-3" > 
                     <li><i class="bi bi-star-fill"></i></li>
                     <li><i class="bi bi-star-fill"></i></li>
                     <li><i class="bi bi-star-fill"></i></li>
