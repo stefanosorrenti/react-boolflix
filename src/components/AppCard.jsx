@@ -6,12 +6,13 @@ export default function AppCard({ typeOfMedia }) { //Aggiunfo props per rendere 
 
 
     //DATA
-    
-    const imgPath = 'https://image.tmdb.org/t/p/'  //Variabile che contiene la path principale per cercare le immagini nell'api
+    //Variabile che contiene la path principale per cercare le immagini nell'api che vado a comporre con la singola path dell'immagine
+    const imgLink = `https://image.tmdb.org/t/p/w342${typeOfMedia.poster_path}`
+     
     const ratingValue = Math.ceil((typeOfMedia.vote_average - 1) * (5 - 1) / (10 - 1) + 1) //Salvo in una variabile la proporzione della valutazione dei film, trasformandolo da 1/10 a 1/5
     const langunges = ['it', 'gb', 'en', 'fr', 'de', 'ro', 'es', 'ja']
     let langClass = ''
-
+    
     function getHoverEffect (id) {
         setSelected(id)
         setHoverRender(true)
@@ -67,15 +68,22 @@ export default function AppCard({ typeOfMedia }) { //Aggiunfo props per rendere 
 
             </ul>
             {/* Movies */}
-            <img
-                src={`${imgPath}w342${typeOfMedia.poster_path}`}
+            {imgLink.includes(null)  ? 
+            (
+              <img src="https://previews.123rf.com/images/oculo/oculo2004/oculo200400003/143645399-no-image-available-icon.jpg"  alt="no-img " />
+            ):(
 
-                className="movies-cover"
-                alt="cover image"
-                
-                
+                <img
+                    src={imgLink}
+    
+                    className="movies-cover"
+                    alt="cover image"
+                    
+                    
+    
+                />
 
-            />
+            )}
 
 
 
