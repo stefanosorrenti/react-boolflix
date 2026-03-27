@@ -18,7 +18,8 @@ export default function AppHeader() {
    
     
     //FUNCTIONS
-    function getMoviesList () { //EFFETUO LE CHIAMATAE AJAX
+    function getMoviesList (e) { //EFFETUO LE CHIAMATAE AJAX
+        e.preventDefault()
         axios.get(apiMoviesEndPoint)
         .then(res => {
             //console.log(res.data.results);
@@ -57,12 +58,21 @@ export default function AppHeader() {
     
     return(
         /* Header */
-        <header>
+        <header className="p-3">
             
             {/* NavBar */}
             <nav>
-                <input type="text" value={inputValue} onChange={(e)=> setInputValue(e.target.value)} /> {/* Rendo dinamico il mio input value */}
-                <button disabled = {inputValue.length == 0 && true} onClick={getMoviesList}>Cerca film</button>
+                <a class="navbar-brand" href="#">
+                <img src= "../src/assets/img/mobile-logo.png" alt="" />
+                <img src= "../src/assets/img/desktop-logo.png" alt=""  />
+                </a>
+                
+                {/* FORM FOR SEARCH */}
+                <form onSubmit={getMoviesList}>
+                <input type="text" value={inputValue} onChange={(e)=> setInputValue(e.target.value)} className="form-control-sm" /> {/* Rendo dinamico il mio input value */}
+                <button disabled = {inputValue.length == 0 && true} className="btn btn-danger">Cerca film</button>
+
+                </form>
             </nav>
             
            
